@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  contacapp-node:
+    image: node
+    working_dir: /home/node/app
+    volumes:
+      - type: bind
+        source: ./
+        target: /home/node/app
+    container_name: contacapp-node
+    networks:
+      - contacapp-network
+    ports:
+      - "3000:3000"
+    command: "npm start"
+
+networks:
+  contacapp-network:
+    driver: bridge
