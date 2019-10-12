@@ -1,7 +1,9 @@
 version: '3.7'
 services:
   contacapp-node:
-    image: node
+    image: contacapp-node
+    build:
+      context: ./
     working_dir: /home/node/app
     volumes:
       - type: bind
