@@ -13,6 +13,21 @@ services:
     ports:
       - "3000:3000"
     command: "npm start"
+  #Mysql service
+  contacapp-mysql:
+    image: mysql
+    volumes:
+      - type: bind
+        source: ./mysql/config
+        target: /etc/mysql/conf.d
+    container_name: contacapp-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=contacapp
+      - MYSQL_USER=anthony
+      - MYSQL_PASSWORD=secret
+    networks:
+      - contacapp-network
 
 networks:
   contacapp-network:

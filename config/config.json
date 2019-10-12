@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
+    "username": "anthony",
+    "password": "secret",
     "database": "contacapp",
-    "host": "127.0.0.1",
+    "host": "contacapp-mysql",
     "dialect": "mysql"
   },
   "test": {
